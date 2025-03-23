@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Item
 
 def index(request):
-    return HttpResponse("Hello World")
+    item_list = Item.objects.all()
+    return HttpResponse(item_list)
     
 
 def item(request):

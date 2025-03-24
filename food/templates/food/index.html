@@ -1,7 +1,9 @@
 {% for item in item_list %}
-{% if item.id|divisibleby:2 %}
-{{item.id}} -- {{item.item_name}}
-{% else %}
-{{item.id}} -- {{item.item_name}}
-{% endif %}
+
+<ul>
+    <li>
+        <a href="{% url 'food:detail' item.pk %}">{{item.item_name}}</a>
+    </li>
+</ul>
+
 {% endfor %}

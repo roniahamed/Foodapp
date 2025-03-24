@@ -14,3 +14,7 @@ def index(request):
 
 def item(request):
     return HttpResponse("This is an Item View")
+
+
+def detail(request, item_id):
+    return HttpResponse("This is item no/id: %s" % item_id)

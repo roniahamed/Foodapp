@@ -1,0 +1,7 @@
+{% for item in item_list %}
+{% if item.id|divisibleby:2 %}
+{{item.id}} -- {{item.item_name}}
+{% else %}
+{{item.id}} -- {{item.item_name}}
+{% endif %}
+{% endfor %}

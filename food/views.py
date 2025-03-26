@@ -5,7 +5,7 @@ from django.template import loader
 
 def index(request):
     item_list = Item.objects.all()
-    template = loader.get_template('food/index.html')
+    template = loader.get_template('./food/index.html')
     context = {
         'item_list':item_list
     }
@@ -21,4 +21,4 @@ def detail(request, item_id):
     context = {
         'item':item
     }
-    return render(request, 'food/detail.html', context)
+    return render(request, './food/detail.html', context)

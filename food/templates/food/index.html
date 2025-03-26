@@ -1,9 +1,23 @@
-{% for item in item_list %}
+<!DOCTYPE html>
+<html lang="en">
 
-<ul>
-    <li>
-        <a href="{% url 'food:detail' item.pk %}">{{item.item_name}}</a>
-    </li>
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'food/style.css' %}">
+</head>
 
-{% endfor %}
+<body>
+    {% for item in item_list %}
+
+    <ul>
+        <li>
+            <a href="{% url 'food:detail' item.pk %}">{{item.item_name}}</a>
+        </li>
+    </ul>
+
+    {% endfor %}
+</body>
+
+</html>

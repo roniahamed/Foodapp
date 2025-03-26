@@ -1,8 +1,18 @@
 {% extends 'food/base.html' %}
 
 {% block body %}
-<h1>{{item.item_name}}</h1>
-<h2> {{item.item_desc}} </h2>
-<h2> {{item.item_price}} </h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{item.item_image}}" height="300px" width="500px" class="card">
+        </div>
+        <div class="col-md-6">
+            <h1>{{item.item_name}} </h1>
+            <h1>{{item.item_desc}} </h1>
+            <h1>${{item.item_price}} </h1>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

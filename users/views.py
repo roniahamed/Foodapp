@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import RegisterForm
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
@@ -16,9 +17,12 @@ def register(request):
         form = RegisterForm()
     return render(request,'users/register.html',{'form':form})
 
-
-
 def LogoutView(request):
     logout(request)
     return redirect('/')
     # return render(request,'users/logout.html')
+
+@login_required
+def profile_page(request):
+    return render(request, 'users/profile.html')
+

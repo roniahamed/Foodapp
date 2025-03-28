@@ -1,5 +1,10 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
 <form action="" method="post">
     {% csrf_token %}
     {{form}}
     <button type="submit">Login</button>
 </form>
+
+{% endblock %}
